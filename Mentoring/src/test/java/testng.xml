@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <parameter name="username" value="standard_user"/>
+    <parameter name="password" value="errorpwd"/>
+    <parameter name="errorMessage" value="Epic sadface: Username and password do not match any user in this service"/>
+    <test name="testLoginWrongPwd">
+        <classes>
+            <class name="LoginTestCase"/>
+        </classes>
+    </test>
+
+    <parameter name="username" value="errorUserName"/>
+    <parameter name="password" value="secret_sauce"/>
+    <parameter name="errorMessage" value="Epic sadface: Username and password do not match any user in this service"/>
+    <test name="testLoginWrongUserName">
+        <classes>
+            <class name="LoginTestCase"/>
+        </classes>
+    </test>
+
+    <parameter name="username" value=""/>
+    <parameter name="password" value="secret_sauce"/>
+    <parameter name="errorMessage" value="Epic sadface: Username is required"/>
+    <test name="testLoginWithoutUserName">
+        <classes>
+            <class name="LoginTestCase"/>
+        </classes>
+    </test>
+
+    <parameter name="username" value="standard_user"/>
+    <parameter name="password" value=""/>
+    <parameter name="errorMessage" value="Epic sadface: Password is required"/>
+    <test name ="testLoginWithoutPwd">
+        <classes>
+            <class name="LoginTestCase"/>
+        </classes>
+    </test>
+
+    <test name ="testAddToCart">
+        <classes>
+            <class name="AddToCartCase"/>
+        </classes>
+    </test>
+
+
+</suite>
